@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <None Remove="bindmerc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bindmerc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BindMe.Process\BindMe.Process.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="IF NOT EXIST &quot;$(OutDir)\Apps&quot; MKDIR &quot;$(OutDir)\Apps&quot;&#xD;&#xA;&#xD;&#xA;IF EXIST &quot;$(SolutionDir)\Apps&quot; XCOPY /E /Y &quot;$(SolutionDir)\Apps&quot; &quot;$(OutDir)\Apps&quot;" />
+  </Target>
+
+</Project>

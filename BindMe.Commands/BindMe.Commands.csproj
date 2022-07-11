@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SoundMeterLib\SoundMeterLib.csproj" />
+    <ProjectReference Include="..\BindMe.Utils\BindMe.Utils.csproj" />
+    <ProjectReference Include="..\BindMe.Constants\BindMe.Constants.csproj" />
+  </ItemGroup>
+
+</Project>

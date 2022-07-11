@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SoundMeter": {
+      "commandName": "Project",
+      "commandLineArgs": "--VolUp 10"
+    }
+  }
+}

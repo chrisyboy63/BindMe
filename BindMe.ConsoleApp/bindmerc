@@ -1,0 +1,18 @@
+﻿# Load up my wonderful editor
+
+# Load up terminal
+Alt + Enter
+	"wt"
+
+# Super + Enter
+# "wt"
+
+# Start up a web page
+Ctrl + Shift + W
+	"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --profile-directory=Default http://duckduckgo.com
+Ctrl + Shift + N
+	"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --profile-directory=Default https://bbc.co.uk/news
+Ctrl + Shift + Y
+	"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --profile-directory=Default https://youtube.com
+Ctrl + Shift + E
+ "C:\Program Files\Neovim\bin\nvim-qt.exe"

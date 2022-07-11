@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BindMe.Utils\BindMe.Utils.csproj" />
+    <ProjectReference Include="..\SoundMeterLib\SoundMeterLib.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="IF NOT EXIST &quot;$(SolutionDir)\Apps&quot; MKDIR &quot;$(SolutionDir)\Apps&quot;&#xD;&#xA;&#xD;&#xA;IF NOT EXIST &quot;$(SolutionDir)\Apps\$(ProjectName)&quot; MKDIR &quot;$(SolutionDir)\Apps\$(ProjectName)&quot;&#xD;&#xA;&#xD;&#xA;COPY $(OutDir) &quot;$(SolutionDir)\Apps\$(ProjectName)&quot;" />
+  </Target>
+
+</Project>
